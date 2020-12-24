@@ -12,8 +12,7 @@ export const persistAuthConfig = {
 
 const root = combineReducers({
   auth: persistReducer(persistAuthConfig, authReducer),
-  // user: userReducer,
-  // error: errorReducer,
+
 });
 
 export default root;

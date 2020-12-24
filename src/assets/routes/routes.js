@@ -11,8 +11,8 @@ export const routes = [
   },
 
   {
-    path: '/your-cv',
-    label: 'DynamicsPage',
+    path: '/profile',
+    label: 'MainPage',
     exact: true,
     component: lazy(() => import('../../pages/MainPage/MainePage')),
     private: true,
