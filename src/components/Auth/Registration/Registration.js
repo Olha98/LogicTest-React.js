@@ -5,7 +5,7 @@ import { registrationFrontSchema } from '../utilsAuth/AuthFrontSchema';
 // import useMessageErr from '../hooks/useMessageErr';
 import ErrorValidation from '../utilsAuth/ErrorValidation';
 import funcMessage from '../utilsAuth/funcMessage';
-import action from '../../../redux/action/authAction'
+import operation from '../../../redux/operations/authOperations'
 import { v4 as uuidv4 } from 'uuid';
 import {
   AuthFormWrapper,
@@ -21,7 +21,6 @@ import {
 
 const Registration = ({ closeModal }) => {
   const dispatch = useDispatch();
-  // const { isMobileDevice } = useDeviceSizes();
   // const { userID } = useReduxState();
   // const [userInfoRegistr] = useUserInfoAuth(userID ? true : false);
   // const { messageErr, error } = useMessageErr();
@@ -37,12 +36,8 @@ const Registration = ({ closeModal }) => {
         validationSchema={registrationFrontSchema}
         onSubmit={async values => {
           console.log(values, 'values');
-           dispatch(action.registrationSuccess({ ...values, id: uuidv4() }));
-          // const data = dispatch(action.registrationSuccess({ ...values }));
-          // data.then(response => {
-          //   if (response) return;
-          //   isMobileDevice && userInfoRegistr && closeModal();
-          // });
+        dispatch(operation.userRegistration({ ...values }));
+          
         }}
       >
         {({ values, errors, touched, handleChange, handleBlur }) => (

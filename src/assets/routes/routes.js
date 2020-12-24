@@ -12,13 +12,13 @@ export const routes = [
 
   {
     path: '/profile',
-    label: 'MainPage',
+    label: 'ProfilePage',
     exact: true,
-    component: lazy(() => import('../../pages/MainPage/MainePage')),
+    component: lazy(() => import('../../pages/ProfilePage/ProfilePage')),
     private: true,
     restricted: false,
   }
 ];
 
 export const homeRoute = routes.find(route => route.label === 'AuthPage');
-export const mainRoute = routes.find(route => route.label === 'MainePage');
+export const profileRoute = routes.find(route => route.label === 'ProfilePage');

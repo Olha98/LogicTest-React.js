@@ -15,7 +15,7 @@ import {
   // ErrMessage,
 } from '../../../common/globalStyleComponents';
 import { AuthFormWrapperLogin } from './LoginStyle';
-import action from '../../../redux/action/authAction'
+import operation from '../../../redux/operations/authOperations';
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -31,8 +31,8 @@ const Login = () => {
         validationSchema={loginFrontSchema}
         onSubmit={values => {
           console.log(values, 'values');
-          dispatch(action.loginSuccess({ ...values }));
-          // dispatch(operation.userLogin({ ...values }));
+
+          dispatch(operation.userLogin({ ...values }));
         }}
       >
         {({ values, errors, touched, handleChange, handleBlur }) => (
