@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-
 export const AuthFormWrapperLogin = styled.div`
   display: flex;
   justify-content: center;
