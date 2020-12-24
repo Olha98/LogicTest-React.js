@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { useProfileForm } from '../hooks/useProfileForm';
+import { useDispatch } from 'react-redux';
+import action from '../../../redux/action/infoAction';
 
 const initialState = {
   name: '',
@@ -8,12 +9,17 @@ const initialState = {
 };
 
 export const ProfileForm = () => {
+  const dispatch = useDispatch();
   const [state, setState] = useState(initialState);
 
-  const {
-    onHandleChange,
-    handleSubmit,
-  } = useProfileForm(state, setState);
+  const onHandleChange = e => {
+    setState({ ...state, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    dispatch(action.addInfoSuccess(state));
+  };
 
   return (
     <InfoForm onSubmit={handleSubmit}>
@@ -38,7 +44,7 @@ export const ProfileForm = () => {
       <button type="submit">Add</button>
     </InfoForm>
   );
-}
+};
 
 const InfoForm = styled.form`
   display: flex;
@@ -72,4 +78,3 @@ const InfoForm = styled.form`
     margin: 10px 0px;
   }
 `;
-

@@ -25,13 +25,13 @@ export const useTextInputValue = () => {
   return [value, setValue, onValueChange];
 };
 
-// NUMBER //
-// export const useNumberInputValue = () => {
-//   const [value, setValue] = useState('');
+//NUMBER //
+export const useNumberInputValue = () => {
+  const [value, setValue] = useState('');
 
-//   const onValueChange = e => {
-//     setValue(Number(e.target.value));
-//   };
+  const onValueChange = e => {
+    setValue(Number(e.target.value));
+  };
 
-//   return [value, setValue, onValueChange];
-// };
+  return [value, setValue, onValueChange];
+};

@@ -17,7 +17,7 @@ export const routes = [
     component: lazy(() => import('../../pages/ProfilePage/ProfilePage')),
     private: true,
     restricted: false,
-  }
+  },
 ];
 
 export const homeRoute = routes.find(route => route.label === 'AuthPage');

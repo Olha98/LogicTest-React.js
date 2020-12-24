@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { loginFrontSchema } from '../utilsAuth/AuthFrontSchema';
 import ErrorValidation from '../utilsAuth/ErrorValidation';
 import funcMessage from '../utilsAuth/funcMessage';
-// import useMessageErr from '../hooks/useMessageErr';
+
 import {
   AuthForm,
   AuthTxt,
@@ -12,14 +12,13 @@ import {
   AuthInputTxt,
   AuthInput,
   AuthButtonBlock,
-  // ErrMessage,
+
 } from '../../../common/globalStyleComponents';
 import { AuthFormWrapperLogin } from './LoginStyle';
 import operation from '../../../redux/operations/authOperations';
 
 const Login = () => {
   const dispatch = useDispatch();
-  // const { messageErr, error } = useMessageErr();
 
   return (
     <AuthFormWrapperLogin>
@@ -39,9 +38,6 @@ const Login = () => {
           <Form>
             <AuthForm>
               <AuthTxt>Вход</AuthTxt>
-              {/* {error?.kindOfErr === 'Login' && (
-                <ErrMessage positionTop={'25px'}>{messageErr}</ErrMessage>
-              )} */}
               <AuthInputForm>
                 <AuthInputTxt>E-mail</AuthInputTxt>
                 <AuthInput

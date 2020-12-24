@@ -2,11 +2,9 @@ import React from 'react';
 import { Formik, Form } from 'formik';
 import { useDispatch } from 'react-redux';
 import { registrationFrontSchema } from '../utilsAuth/AuthFrontSchema';
-// import useMessageErr from '../hooks/useMessageErr';
 import ErrorValidation from '../utilsAuth/ErrorValidation';
 import funcMessage from '../utilsAuth/funcMessage';
-import operation from '../../../redux/operations/authOperations'
-import { v4 as uuidv4 } from 'uuid';
+import operation from '../../../redux/operations/authOperations';
 import {
   AuthFormWrapper,
   AuthForm,
@@ -15,15 +13,10 @@ import {
   AuthInputTxt,
   AuthInput,
   AuthButtonBlock,
-  ErrMessage,
 } from '../../../common/globalStyleComponents';
-// import useReduxState from '../../../hooks/useReduxState';
 
 const Registration = ({ closeModal }) => {
   const dispatch = useDispatch();
-  // const { userID } = useReduxState();
-  // const [userInfoRegistr] = useUserInfoAuth(userID ? true : false);
-  // const { messageErr, error } = useMessageErr();
 
   return (
     <AuthFormWrapper>
@@ -36,17 +29,13 @@ const Registration = ({ closeModal }) => {
         validationSchema={registrationFrontSchema}
         onSubmit={async values => {
           console.log(values, 'values');
-        dispatch(operation.userRegistration({ ...values }));
-          
+          dispatch(operation.userRegistration({ ...values }));
         }}
       >
         {({ values, errors, touched, handleChange, handleBlur }) => (
           <Form>
             <AuthForm>
               <AuthTxt>Регистрация</AuthTxt>
-              {/* {error?.kindOfErr === 'Register' && (
-                <ErrMessage positionTop={'-24px'}>{messageErr}</ErrMessage>
-              )} */}
               <AuthInputForm>
                 <AuthInputTxt>Name</AuthInputTxt>
                 <AuthInput

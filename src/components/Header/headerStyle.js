@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-
 export const HeaderContainer = styled.div`
   width: 280px;
   margin: 0 auto;
@@ -9,7 +8,6 @@ export const HeaderContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #e5e9f2;
-
 `;
 
 export const UserInfoWrapper = styled.div`

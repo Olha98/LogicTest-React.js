@@ -4,14 +4,10 @@ const registrationRequest = () => ({
   type: constants.REGISTER_REQUEST,
 });
 
-const registrationSuccess = credential => {
-console.log(credential, 'credential');
-  return {
-    type: constants.REGISTER_SUCCESS,
-    payload: credential,
-  };
-
-};
+const registrationSuccess = credential => ({
+  type: constants.REGISTER_SUCCESS,
+  payload: credential,
+});
 
 const registrationError = error => ({
   type: constants.REGISTER_ERROR,
@@ -31,7 +27,6 @@ const loginError = error => ({
   type: constants.LOGIN_ERROR,
   payload: error,
 });
-
 
 export default {
   registrationRequest,
